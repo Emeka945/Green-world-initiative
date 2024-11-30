@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Section */
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('pictures/hendrik-cornelissen--qrcOR33ErA-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 80px;
+}
+
+.nav-link {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-link ul {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.nav-link ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-link ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: green;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-link ul li:hover::after {
+    width: 100%;
+}
+
+.text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 62px;
+}
+
+.text-box p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: white;
+}
+
+.super-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.super-btn:hover {
+    border: 1px solid green;
+    background: green;
+    transition: 1s;
+}
+
+/* --- Responsive Styles --- */
+
+@media (max-width: 1024px) {
+    /* Header - Ensure full-width on tablet screens */
+    .header {
+        min-height: 80vh;
+    }
+
+    .text-box h1 {
+        font-size: 40px;
+    }
+
+    .text-box p {
+        font-size: 14px;
+    }
+
+    /* Navbar */
+    nav {
+        padding: 2% 4%;
+    }
+
+    .nav-link ul li {
+        padding: 6px 8px;
+    }
+
+    .nav-link ul li a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Text Box */
+    .text-box h1 {
+        font-size: 30px;
+    }
+
+    .text-box p {
+        font-size: 12px;
+    }
+
+    /* Navigation - Stack the menu vertically */
+    .nav-link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        z-index: 2;
+    }
+
+    .nav-link ul {
+        padding: 0;
+        width: 100%;
+    }
+
+    .nav-link ul li {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        text-align: left;
+    }
+
+    .nav-link ul li a {
+        font-size: 18px;
+    }
+
+    /* Menu Button for Mobile */
+    .nav-link ul li:last-child {
+        border-top: 1px solid white;
+    }
+
+    /* Service Sections */
+    .services {
+        width: 100%;
+        padding-top: 40px;
+    }
+
+    .row {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .services-col {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    /* Facilities Section */
+    .facility-col {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    /* Footer - Adjust text size */
+    .footer-text h1 {
+        font-size: 25px;
+    }
+
+    .footer-text p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Small Screen Adjustments (Mobile Phones) */
+    body {
+        font-size: 14px;
+    }
+
+    /* Header - Adjust image and text sizes */
+    .text-box h1 {
+        font-size: 25px;
+    }
+
+    .text-box p {
+        font-size: 12px;
+    }
+
+    /* Footer */
+    .footer-text {
+        padding: 60px 10px;
+    }
+
+    .footer-text h1 {
+        font-size: 22px;
+    }
+
+    .footer-text p {
+        font-size: 12px;
+    }
+
+    /* Adjust all forms and inputs */
+    form input {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .last-part .roww {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .last-part .coll {
+        flex-basis: 100%;
+        padding: 10px 0;
+    }
+}
+
+/* --- Global Styles --- */
+.services {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.services-col {
+    flex-basis: 1 1 22%;
+    background-color: greenyellow;
+    border-radius: 10px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    transition: 0.5s;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.services-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* --- Facilities Section --- */
+.facilities {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 10px;
+}
+
+.facility-col {
+    flex-basis: 32%;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.facility-col img {
+    display: inline-block;
+}
+
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.layer:hover {
+    background: rgba(39, 161, 14, 0.8);
+}
+
+.layer h3 {
+    width: 100%;
+    font-weight: 600;
+    color: white;
+    font-size: 28px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    transition: 0.5s;
+}
+
+.layer:hover h3 {
+    bottom: 49%;
+    opacity: 1;
+}
+
+/* --- Contact Us Section --- */
+.cta {
+    margin: 10px auto;
+    width: 80%;
+    background-image: url(pictures/contact.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.cta h1 {
+    color: white;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+/* --- Footer Section --- */
+.footer-text {
+    margin: 10px auto;
+    width: 80%;
+    background-image: url(pictures/kalen-emsley-Bkci_8qcdvQ-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.footer-text {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.footer-text h1 {
+    font-size: 62px;
+}
+
+.footer-text p {
+    margin: 10px 0 10px;
+    font-size: 14px;
+    color: white;
+}
+
+.super-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.super-btn:hover {
+    border: 1px solid green;
+    background: green;
+    transition: 1s;
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer h4 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.icons .fa {
+    margin-right: 0 20px;
+    cursor: pointer;
+    padding: 20px 0;
+}
+
+/* --- Bottom Part --- */
+.last-part {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background-color: greenyellow;
+    color: white;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.roww {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.coll {
+    flex-basis: 10px;
+    padding: 10px;
+}
+
+.new-logo {
+    width: 60px;
+    margin-bottom: 30px;
+}
+
+.coll h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email-id {
+    width: fit-content;
+    border-bottom: 1px solid;
+    margin: 20px 0;
+}
+
+ul li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    margin-bottom: 50px;
+}
+
+form input {
+    width: 100px;
+    background: transparent;
+    color: white;
+    border: 0;
+    outline: none;
+}
